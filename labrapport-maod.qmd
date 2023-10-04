@@ -5,9 +5,21 @@ format: html
 
 ## Introduksjon
 
+
 ## Metode
 
+
 ## Resultat
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+library(tidyverse)
+
+```
 
 
 ## Diskusjon
