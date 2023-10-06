@@ -19,13 +19,14 @@ format: html
  data("submaks_vo2")
 
   library(tidyverse)
-
-library("ggplot2")
-library("ggplot2")
+install.packages(gt)
+library("ggplot")
  install.packages("readxl")
   library(readxl)
   data <- readxl::read_excel("submaks_vo2.xlsx")
 install(glimpse)
+install.packages("gt")
+install.packages("ggplot")
 
 glimpse(submaks_vo2)
 
@@ -35,14 +36,16 @@ submaks_vo2$vo2_maks_t1[is.na(submaks_vo2$vo2_maks_t1)] <- NA
 submaks_vo2$maod_t1[is.na(submaks_vo2$maod_t1)] <- NA
 
 submaks_vo2
+ggplot(data = submaks_vo2, aes(x = vekt, y= høyde))
+
+
+submaks_vo2
 
 
 
 
 
-
-
-![in](submaks_vo2.xlsx)
+(submaks_vo2.xlsx)
 data("submaks_vo2")
 ?submaks_vo2
 
@@ -53,6 +56,12 @@ submaks_vo2$vo2_maks_t1 <- as.numeric(submaks_vo2$vo2_maks_t1)
 submaks_vo2$maod_t1 <- as.numeric(submaks_vo2$maod_t1)
 
 submaks_vo2
+
+
+ggplot(data = submaks_vo2, aes(x = vekt, y= høyde))+geom_point()
+
+
+
 
 ```
 
