@@ -18,11 +18,9 @@ format: html
 
 
 library(tidyverse)
-install.packages("readxl")
-library(readxl)
 
-data <- read_excel
-
+data <- submaks_vo2
+print(data)
 ```
 
 
