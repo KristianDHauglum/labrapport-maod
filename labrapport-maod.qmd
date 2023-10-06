@@ -63,11 +63,13 @@ ggplot(data = submaks_vo2, aes(x = vekt, y= høyde))+geom_point()
 
 
 
+data <- submaks_vo2
+print(data)
 ```
 
 
 ## Diskusjon
-
+ 
 
 ## Referanser
 
