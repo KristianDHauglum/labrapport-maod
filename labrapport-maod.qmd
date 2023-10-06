@@ -16,8 +16,43 @@ format: html
 #| message: false
 #| warning: false
 
+ data("submaks_vo2")
 
-library(tidyverse)
+  library(tidyverse)
+
+library("ggplot2")
+library("ggplot2")
+ install.packages("readxl")
+  library(readxl)
+  data <- readxl::read_excel("submaks_vo2.xlsx")
+install(glimpse)
+
+glimpse(submaks_vo2)
+
+submaks_vo2$submax_100W_t1[is.na(submaks_vo2$submax_100W_t1)] <- NA
+submaks_vo2$submax_150W_t1[is.na(submaks_vo2$submax_150W_t1)] <- NA
+submaks_vo2$vo2_maks_t1[is.na(submaks_vo2$vo2_maks_t1)] <- NA
+submaks_vo2$maod_t1[is.na(submaks_vo2$maod_t1)] <- NA
+
+submaks_vo2
+
+
+
+
+
+
+
+![in](submaks_vo2.xlsx)
+data("submaks_vo2")
+?submaks_vo2
+
+submaks_vo2
+submaks_vo2$submax_100W_t1 <- as.numeric(submaks_vo2$submax_100W_t1)
+submaks_vo2$submax_150W_t1 <- as.numeric(submaks_vo2$submax_150W_t1)
+submaks_vo2$vo2_maks_t1 <- as.numeric(submaks_vo2$vo2_maks_t1)
+submaks_vo2$maod_t1 <- as.numeric(submaks_vo2$maod_t1)
+
+submaks_vo2
 
 ```
 
