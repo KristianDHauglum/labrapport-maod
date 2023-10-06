@@ -18,12 +18,16 @@ format: html
 
 
 library(tidyverse)
+install.packages("readxl")
+library(readxl)
+
+data <- read_excel
 
 ```
 
 
 ## Diskusjon
-
+ 
 
 ## Referanser
 
