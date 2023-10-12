@@ -4,9 +4,26 @@ format: html
 ---
 
 
-#Introduksjon
+# Introduksjon
 
-#Metode
+Maximal Accumulated Oxygen Deficit, heretter MAOD, er en test som måler utøverens anaerobe kapasitet (Tanner & Gore, 2013, s. 61). 
+
+Testen kan utføres med flere ulike bevegelsesformer, men vanligst er løping og sykling. Til tross for at testen regnes som det beste praktiske målet på anaerob kapasitet, er det en rekke metodiske utfordringer knyttet til testen. Det er derfor ingen universell protokoll for måling av MAOD. 
+
+Hensikten med denne oppgaven er å presentere målinger av reliabiliteten for data hentet inn på fysiologisk laboratorium. Dataen er hentet fra to ulike testdager, der blant annet MAOD-testen ble gjennomført på Lode ergometersykkel. Flere tiltak ble gjort for å sikre god reliabilitet 
+
+
+# Metode
+
+## Testprosedyre forberedelser:
+I forkant av testen ble ingen retningslinjer gitt til utøveren. På testdagen ble utøveren veid, og det ble følgelig gjennomført fire tester. Den første testen var en knebøy-test, der kraft/hastighet ble målt. Her ble tre repetisjoner gjennomført med maksimal innsats med henholdsvis 30%, 60% og 90% av utøverens kroppsvekt. Videre gjennomførte utøveren to submaksimale drag på sykkel. Hvert drag var på 4 minutter, der VO2-målinger ble gjort hvert 30. sekund fra 2 minutter. På de samme tidspunktene ble tråkkfrekvensen notert ned. Her ble det benyttet en wattbelastning på 100W og 150W. Etter en to minutters pause gjennomførte utøveren en VO2max.
+
+
+## Testprosedyre MAOD:
+Utøveren gjennomførte MAOD-testen som siste test av fire tester. Dermed var utøveren ferdig oppvarmet til test, og det krevdes ingen ytterligere oppvarming. Hele testen gjennomføres med neseklype og munnstykke, og det måles oksygenopptak hvert 30 sekund. Før testens start informeres utøveren om at tråkkfrekvensen optimalt skal ligge på gjennomsnittlig tråkkfrekvens fra tidligere gjennomførte submaksimale drag, og utøveren kan begynne å tråkke uten motstand på sykkelen. En forhåndsbestemt wattbelastning settes i starten av en 30 sekunders måleperiode. Testen foregår til utmattelse, som antas å være når tråkkfrekvensen er < 60 RPM. Ved utmattelse stoppes tiden, og utøveren kan ta av neseklypen og munnstykket. 
+
+# Resultat
+## Gjennomsnitt av deltakerne
 
 ```{r}
 #| echo: false
@@ -16,17 +33,95 @@ format: html
 library(tidyverse)
 library(dplyr)
 library(readxl)
+library(ggplot2)
+library(gt)
 
 datasett <- read_excel("tabell_MAOD.xlsx")
 
+#Legge inn alder i datasettet
+datasett$alder <- c(25, 25, 22, 22, 23, 27)
+
+#Lage tabell som viser gruppekarakteristikken
+#Finne gjennomsnittet og standardavviket (i parantes)
+datasett %>%
+        select(forsøksperson, kjønn, alder, vekt, høyde) %>%
+        group_by(kjønn) %>%
+        summarise(alderMean = mean(alder),
+                  aldersd = sprintf("(%.2f)", sd(alder)),
+                  vektMean = mean(vekt),
+                  vektsd = sprintf("(%.2f)", sd(vekt)),
+                  høydeMean = mean(høyde),
+                  høydesd = sprintf("(%.2f)", sd(høyde)),
+                  n = n()) %>%
+        gt(caption = "Tabell 1: Gruppekarakteristikk") %>% 
+        fmt_number(decimals = 0) %>% 
+        cols_label(n = "Deltakere",
+                   kjønn = "Kjønn",
+                   alderMean = "Age",
+                   aldersd = "",
+                   vektMean = "Vekt (kg)",
+                   vektsd = "",
+                   høydeMean = "Høyde (cm)",
+                   høydesd = "")
 
 
+```
 
+Tabellen viser utvalget av deltakerne, samt deres kjønn, alder, høyde og vekt. 
+Det var totalt 6 deltakere der alle var menn. 
+
+## Gjenomsnitt av oksygenopptak under MAOD-test
+Tallene i tabell 2 viser hvor stor prosentandel av oksygenopptaket som var dekket av anaerobe energiprosesser under MAOD-testen. Differansen viser forskjellen mellom tesdag 1 og testdag 2. 
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(dplyr)
+library(readxl)
+library(ggplot2)
+library(gt)
+
+datasett <- read_excel("tabell_MAOD.xlsx")
+
+datasett %>% 
+  select(maod_t1, maod_t2) %>% 
+  mutate(maod_t1 = as.numeric(maod_t1) * 100, 
+         maod_t2 = as.numeric(maod_t2) * 100) %>%
+  summarise(MeanMaod.T1 = mean(maod_t1, na.rm = TRUE),
+            SDMaod.T1 = sprintf("(%.2f)", sd(maod_t1, na.rm = TRUE)),
+            MeanMaod.T2 = mean(maod_t2, na.rm = TRUE), 
+            SDMaod.T2 = sprintf("(%.2f)", sd(maod_t2, na.rm = TRUE)),
+            maod_diff = MeanMaod.T2 - MeanMaod.T1,
+            n = n()) %>% 
+  
+  #Velger ut hvilke kolonner som skal representeres i tabellen
+  gt(caption = "Tabell 2: Resultater MAOD i %") %>% 
+  fmt_number(columns = c("MeanMaod.T1", 
+                         "SDMaod.T1", 
+                         "MeanMaod.T2", 
+                         "SDMaod.T2",
+                         "maod_diff"),
+             decimals = 2) %>% 
+  
+  #Navngir kolonnene i tabellen   
+  cols_label(n = "Deltakere",
+                   MeanMaod.T1 = "MAOD T1",
+                   SDMaod.T1 = "",
+                   MeanMaod.T2 = "MAOD T2",
+                   SDMaod.T2 = "",
+                  maod_diff = "Differanse")
+  
 ```
 
 
 
 
-#Resultat
+
+
+
 
 
