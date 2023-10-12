@@ -66,7 +66,7 @@ datasett %>%
 
 ```
 
-Tabellen viser utvalget av deltakerne, samt deres kjønn, alder, høyde og vekt. 
+Tabell 1 viser utvalget av deltakerne, samt deres kjønn, alder, høyde og vekt. 
 Det var totalt 6 deltakere der alle var menn. 
 
 ## Gjenomsnitt av oksygenopptak under MAOD-test
@@ -115,10 +115,31 @@ datasett %>%
                   maod_diff = "Differanse")
   
 ```
+Som tabell 2 viser ble gjenomsnittlig 85,86 % av oksygenopptaket dekket av utøvernes anaerobe kapasitet, med et standardavvik på 8,20%. For testdag 2 var denne prosentandelen 90,92%, med et standardavvik på 5,88%. Dette tilsvarer en differanse på 5,06%. 
 
 
+## Figur som skal vise sammenheng
+Finne ut hva vi ønsker at denne figuren skal fremstille. 
 
-# Reliabilitet
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+datasett <- read_excel("tabell_MAOD.xlsx")
+
+
+ggplot(data = datasett, aes(x = maod_t1, 
+                            y = maod_t2,
+                            color = vekt)) + geom_point()
+
+```
+
+
+# Diskusjon og reliabilitet
 ## Tre måter å måle reliabilitet
 Med reliabilitet mener vi reproduserbarheten til en test, analyse eller annen måling i gjentatte forsøk på de samme individene (Hopkins, 2000, s.1). Hopkins (2000) viser til tre måter å måle reliabilitet på «within-subject random variation», «systematic change in the mean» og «retest correlation». 
 
