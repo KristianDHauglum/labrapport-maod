@@ -129,12 +129,21 @@ Finne ut hva vi ønsker at denne figuren skal fremstille.
 library(tidyverse)
 library(readxl)
 library(ggplot2)
-datasett <- read_excel("tabell_MAOD.xlsx")
+rel.datasett <- read_excel("Reliabilitet_maod.xlsx") %>% 
 
+mutate(timepoint = factor(timepoint,
+                            level = c("t1", "t2"),
+                            labels = c("T1", "T2")),
+         subject = factor(subject))
 
-ggplot(data = datasett, aes(x = maod_t1, 
-                            y = maod_t2,
-                            color = vekt)) + geom_point()
+# Kode for figur 
+ggplot(data = rel.datasett, aes(x = timepoint, 
+                            y = maod,
+                            color = subject,
+                            group = subject)) + geom_point() + geom_line() +
+                            labs(x = "Testdag", 
+                                 y = "MAOD i %",
+                                 color = "Deltakere")
 
 ```
 
