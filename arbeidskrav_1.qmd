@@ -1,0 +1,32 @@
+---
+title: "Arbeidskrav_1"
+format: html
+---
+
+
+#Introduksjon
+
+#Metode
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(dplyr)
+library(readxl)
+
+datasett <- read_excel("tabell_MAOD.xlsx")
+
+
+
+
+```
+
+
+
+
+#Resultat
+
+
