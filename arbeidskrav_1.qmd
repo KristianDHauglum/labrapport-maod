@@ -126,15 +126,25 @@ Finne ut hva vi ønsker at denne figuren skal fremstille.
 #| message: false
 #| warning: false
 
+
 library(tidyverse)
 library(readxl)
 library(ggplot2)
-datasett <- read_excel("tabell_MAOD.xlsx")
+rel.datasett <- read_excel("Reliabilitet_maod.xlsx") %>% 
 
+mutate(timepoint = factor(timepoint,
+                            level = c("t1", "t2"),
+                            labels = c("T1", "T2")),
+         subject = factor(subject))
 
-ggplot(data = datasett, aes(x = maod_t1, 
-                            y = maod_t2,
-                            color = vekt)) + geom_point()
+# Kode for figur 
+ggplot(data = rel.datasett, aes(x = timepoint, 
+                            y = maod,
+                            color = subject,
+                            group = subject)) + geom_point() + geom_line() +
+                            labs(x = "Testdag", 
+                                 y = "MAOD i %",
+                                 color = "Deltakere")
 
 ```
 
@@ -143,16 +153,20 @@ ggplot(data = datasett, aes(x = maod_t1,
 ## Tre måter å måle reliabilitet
 Med reliabilitet mener vi reproduserbarheten til en test, analyse eller annen måling i gjentatte forsøk på de samme individene (Hopkins, 2000, s.1). Hopkins (2000) viser til tre måter å måle reliabilitet på «within-subject random variation», «systematic change in the mean» og «retest correlation». 
 
-Hopkins (2000) forklarer at «within-subject variation» er den viktigste reliabilitetsmålingen. «Within-subject variation» kan ses på som tilfeldig variasjon i målinger når et enkelt individ blir testet flere ganger (Hopkins, 2000, s.2). Variasjonen i målingene hos det enkelte individet kan vises som standardavvik. Ved å dele standardavviket på kvadratroten av to finner man det Hopkins refererer til som «typical error». Det finnes flere kilder til «typical error» i en måling, som for eksempel endringer i fysisk eller mental tilstand mellom de to testene. 
+Hopkins (2000) forklarer at «within-subject variation» er den viktigste reliabilitetsmålingen. «Within-subject variation» kan ses på som tilfeldig variasjon i målinger når et enkelt individ blir testet flere ganger (Hopkins, 2000, s.2). Variasjonen i målingene hos det enkelte individet kan vises som standardavvik. Ved å dele standardavviket på kvadratroten av to finner man det Hopkins (2000) refererer til som «typical error». Det finnes flere kilder til «typical error» i en måling, som for eksempel endringer i fysisk eller mental tilstand mellom de to testene. 
 
 Endringer i gjennomsnittet kan være tilfeldige eller systematiske. «Systematic change in the mean» kan oppstå fordi testpersonene får bedre kjennskap til testen eller økt motivasjon. Systematiske endringer i gjennomsnittet kan påvirke enkelt individers resultater som igjen kan påvirke typical error (Hopkins 2000, s. 5). Hopkins (2000) foreslår å gjennomføre testen mange nok ganger før intervensjonen slik at man minimerer denne læringseffekten.
 
 Den siste målingen for reliabilitet Hopkins (2000) presenterer er «retest correlation». Her kontrollerer man forskjellen mellom de ulike testene hos hvert enkelt individ. Dersom hvert individ har identiske målinger på test og retest har korrelasjonskoefissienten en verdi på 1, og hvis man lager en graf av de to forsøkene vil punktene danne en rett linje. Ved tilfeldig feil i målingen vil grafen vise en tilfeldig spreding av punkter og korrelasjonskoefissienten nærmer seg 0 (Hopkins, 2000, s. 6).
 
-I denne oppgaven har vi valgt å bruke «within- subject variation» til å måle reliabiliteten på testene våre, ettersom at....
+I denne oppgaven har vi valgt å bruke «retest correlation» til å måle reliabiliteten på testene våre, ettersom at 
 
 
 ## Utregning av reliabiliteten mellom testene 
+
+
+
+## Diskusjon av våre resultater
 
 
 
