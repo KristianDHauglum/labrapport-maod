@@ -168,8 +168,6 @@ I denne oppgaven har vi valgt å bruke «retest correlation» til å måle relia
 
 ## Diskusjon av våre resultater
 
-
-
-
+Resultatete viser til at det ikke er en stor reliabilitet i dataene. Dette grunnet en høy cv på 7,75, dette viser til at testen ikke er reliabilitet dersom en god cv verdi er på 1. Dette kan skylles eventuelle feilkilder. En av feilkildene vil være at vi ikke fikk samlet inn data på to av personene under testdag 1. Dette påvirket dataene våre slik at vi ikke kunne regne ut av deres MAOD verdi var på testdag 1. En annen feilkilde vi har er at slangene falt ut av munnstykket under den ene testen og førte til at vi mistet flere tall fra denne testen. Vi kan tenke oss at målingene som ble tatt før slangen datt vil være lite reilable og dermed feil. Vi kan også tenke oss at testpersonene har hatt et læringsutbytte fra tatdag 1 til testdag 2, dette kan vi vise til i tabell 2 hvor de har en gjennomsnittlig forbedring på 5,06%. (flere som har kjennskap og om vi skulle hatt en generalprøve med de før vi kjørte testen)
 
 
