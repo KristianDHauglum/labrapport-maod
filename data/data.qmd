@@ -1,2 +1,0 @@
-dataset <- read.csv("C:\Users\1234\OneDrive\Dokumenter\data.csv")
-
