@@ -118,8 +118,8 @@ datasett %>%
 Som tabell 2 viser ble gjenomsnittlig 85,86 % av oksygenopptaket dekket av utøvernes anaerobe kapasitet, med et standardavvik på 8,20%. For testdag 2 var denne prosentandelen 90,92%, med et standardavvik på 5,88%. Dette tilsvarer en differanse på 5,06%. 
 
 
-## Figur som skal vise sammenheng
-Finne ut hva vi ønsker at denne figuren skal fremstille. 
+## MAOD for de uike deltakerne på T1 og T2.
+Gjennomsnittelig anaerobt arbeid for deltakerne var 89%, med et standardavvik på 6,9. Dette resulterte i en variasjonskoeffesient (cv) på 7,75. 
 
 ```{r}
 #| echo: false
@@ -144,9 +144,11 @@ ggplot(data = rel.datasett, aes(x = timepoint,
                             group = subject)) + geom_point() + geom_line() +
                             labs(x = "Testdag", 
                                  y = "MAOD i %",
-                                 color = "Deltakere")
+                                 color = "Deltakere") +
+                            ggtitle("MAOD for de ulike deltakere på T1 og t2")
 
 ```
+Figuren presenterer reliabiliteten mellom T1 og T2. 
 
 
 # Diskusjon og reliabilitet
@@ -162,12 +164,9 @@ Den siste målingen for reliabilitet Hopkins (2000) presenterer er «retest corr
 I denne oppgaven har vi valgt å bruke «retest correlation» til å måle reliabiliteten på testene våre, ettersom at 
 
 
-## Utregning av reliabiliteten mellom testene 
-
 
 
 ## Diskusjon av våre resultater
-
-Resultatete viser til at det ikke er en stor reliabilitet i dataene. Dette grunnet en høy cv på 7,75, dette viser til at testen ikke er reliabilitet dersom en god cv verdi er på 1. Dette kan skylles eventuelle feilkilder. En av feilkildene vil være at vi ikke fikk samlet inn data på to av personene under testdag 1. Dette påvirket dataene våre slik at vi ikke kunne regne ut av deres MAOD verdi var på testdag 1. En annen feilkilde vi har er at slangene falt ut av munnstykket under den ene testen og førte til at vi mistet flere tall fra denne testen. Vi kan tenke oss at målingene som ble tatt før slangen datt vil være lite reilable og dermed feil. Vi kan også tenke oss at testpersonene har hatt et læringsutbytte fra tatdag 1 til testdag 2, dette kan vi vise til i tabell 2 hvor de har en gjennomsnittlig forbedring på 5,06%. (flere som har kjennskap og om vi skulle hatt en generalprøve med de før vi kjørte testen)
+Resultatete viser til at det ikke er en god reliabilitet mellom resultatene fra T1 og T2.  Dette grunnet en høy cv på 7,75, dette viser til at testen ikke er reliabilitet dersom en god cv verdi er på 1. Dette kan skylles eventuelle feilkilder. En av feilkildene vil være at vi ikke fikk samlet inn data på to av personene under testdag 1. Dette påvirket dataene våre slik at vi ikke kunne regne ut av deres MAOD verdi var på testdag 1. En annen feilkilde vi har er at slangene falt ut av munnstykket under den ene testen og førte til at vi mistet flere tall fra denne testen. Vi kan tenke oss at målingene som ble tatt før slangen datt vil være lite reilable og dermed feil. Vi kan også tenke oss at testpersonene har hatt et læringsutbytte fra tatdag 1 til testdag 2, dette kan vi vise til i tabell 2 hvor de har en gjennomsnittlig forbedring på 5,06%. (flere som har kjennskap og om vi skulle hatt en generalprøve med de før vi kjørte testen)
 
 
