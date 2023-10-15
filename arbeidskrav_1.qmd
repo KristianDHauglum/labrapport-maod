@@ -1,5 +1,5 @@
 ---
-title: "Arbeidskrav_1"
+title: "Arbeidskrav 1"
 format: html
 ---
 
@@ -67,11 +67,9 @@ datasett %>%
 ```
 
 Tabell 1 viser utvalget av deltakerne, samt deres kjønn, alder, høyde og vekt. 
-Det var totalt 6 deltakere der alle var menn. 
+
 
 ## Gjenomsnitt av oksygenopptak under MAOD-test
-Tallene i tabell 2 viser hvor stor prosentandel av oksygenopptaket som var dekket av anaerobe energiprosesser under MAOD-testen. Differansen viser forskjellen mellom tesdag 1 og testdag 2. 
-
 
 ```{r}
 #| echo: false
@@ -115,7 +113,7 @@ datasett %>%
                   maod_diff = "Differanse")
   
 ```
-Som tabell 2 viser ble gjenomsnittlig 85,86 % av oksygenopptaket dekket av utøvernes anaerobe kapasitet, med et standardavvik på 8,20%. For testdag 2 var denne prosentandelen 90,92%, med et standardavvik på 5,88%. Dette tilsvarer en differanse på 5,06%. 
+Tallene i tabell 2 viser hvor stor prosentandel av oksygenopptaket som var dekket av anaerobe energiprosesser under MAOD-testen. Differansen viser forskjellen mellom tesdag 1 og testdag 2. 
 
 
 ## MAOD for de uike deltakerne på T1 og T2.
@@ -164,9 +162,9 @@ Den siste målingen for reliabilitet Hopkins (2000) presenterer er «retest corr
 I denne oppgaven har vi valgt å regne ut variasjonskoeffesienten for å måle reliabiliteten på testene våre. Variasjonskoeffesienten forteller oss hvor mye tallene i dataen prosentvis viker fra gjennomsnittet og er ofte et utrykk for standardfeilen. Grunnen til at man bruker variasjonskoeffesienten er at sammenlikningen blir mere nøyaktig ettersom standardfeilen ofte øker når målingsverdiene blir større, mens prosentverdiene er ganske like (Hopkins, 2000, s.6). En større variasjonskoeffesient betyr større spredning i dataen. Dersom variasjonskoeffesienten er lav, er reliabiliteten høy.
 
 
-
-
 ## Diskusjon av våre resultater
-Resultatete viser til at det ikke er en god reliabilitet mellom resultatene fra T1 og T2.  Dette grunnet en høy cv på 7,75, dette viser til at testen ikke er reliabilitet dersom en god cv verdi er på 1. Dette kan skylles eventuelle feilkilder. En av feilkildene vil være at vi ikke fikk samlet inn data på to av personene under testdag 1. Dette påvirket dataene våre slik at vi ikke kunne regne ut av deres MAOD verdi var på testdag 1. En annen feilkilde vi har er at slangene falt ut av munnstykket under den ene testen og førte til at vi mistet flere tall fra denne testen. Vi kan tenke oss at målingene som ble tatt før slangen datt vil være lite reilable og dermed feil. Vi kan også tenke oss at testpersonene har hatt et læringsutbytte fra tatdag 1 til testdag 2, dette kan vi vise til i tabell 2 hvor de har en gjennomsnittlig forbedring på 5,06%. (flere som har kjennskap og om vi skulle hatt en generalprøve med de før vi kjørte testen)
+Resultatene viser at det ikke er en stor reliabilitet i dataene som ble samlet inn. Dette grunnet en høy cv-verdi på 7,75. En god cv-verdi ville vært 1, og jo høyere denne er jo mindre reliable vil testresultatene være. Dette kan skyldes feilkilder underveis i testingen. En av feilkildene som kan ha påvirket var at vi ikke fikk samlet inn data på to av forsøkspersonene under testdag 1. Dette påvirket dataene våre slik at vi ikke kunne regne ut deres MAOD-verdi på testdag 1. En annen feilkilde er at slangen skled av munnstykket under den ene testen og førte til at vi mistet viktige tall på slutten av denne testen. Vi kan tenke oss at målingene som ble tatt før slangen skled av vil være lite reliable i og med at slangen sannsynligvis har hatt en lekkasje som følge av at den ikke satt godt nok på munnstykket. Det er også mulig at forsøkspersonene har hatt et læringsutbytte fra testdag 1 til testdag 2. Dette kan ses i tabell 2 hvor forsøkspersonene har en gjennomsnittlig forbedring på 5,06%. Denne feilkilden kunne potensielt ha vært redusert ved å gjøre forsøkspersonene bedre kjent med testen før den skulle gjennomføres. De kunne for eksempel ha observert andre forsøkspersoner utføre testen først eller ha gjennomført en generalprøve selv. Fem av seks forsøkspersoner er idrettsstudenter, og det er sannsynlig at flere av disse er kjent med testene som ble utført. Det er dermed ikke sikkert at observasjon eller generalprøve ville bidratt til å dempe et eventuelt læringsutbytte. En generalprøve kunne derimot bidratt til å redusere feilkilder utført av testlederne. For tre av fire testledere var dette første gangen de utførte slike tester, og det er dermed lett å gjøre feil som påvirker testresultatene.
+
+For å konkludere viser testresultatene lite reliable svar. Det er flere feilkilder som etter all sannsynlighet har påvirket testene, og den høye cv-verdien viser dette.
 
 
