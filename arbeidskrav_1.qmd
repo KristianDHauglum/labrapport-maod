@@ -161,7 +161,7 @@ Endringer i gjennomsnittet kan være tilfeldige eller systematiske. «Systematic
 
 Den siste målingen for reliabilitet Hopkins (2000) presenterer er «retest correlation». Her kontrollerer man forskjellen mellom de ulike testene hos hvert enkelt individ. Dersom hvert individ har identiske målinger på test og retest har korrelasjonskoefissienten en verdi på 1, og hvis man lager en graf av de to forsøkene vil punktene danne en rett linje. Ved tilfeldig feil i målingen vil grafen vise en tilfeldig spreding av punkter og korrelasjonskoefissienten nærmer seg 0 (Hopkins, 2000, s. 6).
 
-I denne oppgaven har vi valgt å bruke «retest correlation» til å måle reliabiliteten på testene våre, ettersom at 
+I denne oppgaven har vi valgt å regne ut variasjonskoeffesienten for å måle reliabiliteten på testene våre. Variasjonskoeffesienten forteller oss hvor mye tallene i dataen prosentvis viker fra gjennomsnittet og er ofte et utrykk for standardfeilen. Grunnen til at man bruker variasjonskoeffesienten er at sammenlikningen blir mere nøyaktig ettersom standardfeilen ofte øker når målingsverdiene blir større, mens prosentverdiene er ganske like (Hopkins, 2000, s.6). En større variasjonskoeffesient betyr større spredning i dataen. Dersom variasjonskoeffesienten er lav, er reliabiliteten høy.
 
 
 
